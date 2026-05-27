@@ -301,9 +301,12 @@ h1 {
   color: var(--highlight);
   font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   padding-top: 22px;
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .timeline-content p {
@@ -379,6 +382,8 @@ h1 {
 
   .timeline-year {
     padding-top: 0;
+    text-align: left;
+    letter-spacing: 0.08em;
   }
 }
 
