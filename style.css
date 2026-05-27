@@ -390,23 +390,24 @@ h1 {
   }
 
   .timeline::before {
-    left: 10px;
+    left: 120px;
   }
 
   .timeline-item {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding-left: 34px;
+    grid-template-columns: 92px 1fr;
+    gap: 56px;
+    padding-left: 0;
   }
 
   .timeline-item::before {
-    left: 4px;
+    left: 114px;
+    top: 26px;
   }
 
   .timeline-year {
-    padding-top: 0;
-    text-align: left;
-    letter-spacing: 0.08em;
+    padding-top: 22px;
+    text-align: right;
+    letter-spacing: 0.04em;
   }
 }
 
@@ -619,21 +620,26 @@ h1 {
     gap: 18px;
   }
 
-  .timeline-item {
-    padding-left: 30px;
+  .timeline::before {
+    left: 86px;
   }
 
-  .timeline::before {
-    left: 8px;
+  .timeline-item {
+    grid-template-columns: 68px 1fr;
+    gap: 34px;
+    padding-left: 0;
   }
 
   .timeline-item::before {
-    left: 2px;
-    top: 6px;
+    left: 80px;
+    top: 22px;
   }
 
   .timeline-year {
     font-size: 12px;
+    padding-top: 18px;
+    text-align: right;
+    letter-spacing: 0.02em;
   }
 
   .footer {
@@ -660,5 +666,22 @@ h1 {
   .hero-tags span,
   .project-status {
     font-size: 11.5px;
+  }
+
+  .timeline::before {
+    left: 78px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 62px 1fr;
+    gap: 30px;
+  }
+
+  .timeline-item::before {
+    left: 72px;
+  }
+
+  .timeline-year {
+    font-size: 11px;
   }
 }
