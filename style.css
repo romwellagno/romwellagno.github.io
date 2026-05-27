@@ -40,7 +40,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(2, 6, 7, 0.86);
+  background: rgba(2, 6, 7, 0.88);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
 }
@@ -48,22 +48,39 @@ a {
 .nav {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 18px 24px;
+  padding: 22px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 0;
+  min-width: 390px;
+}
+
+.logo::before {
+  content: "";
   display: block;
-  width: 260px;
-  height: 52px;
-  background-image: url("rca-logo.png");
+  width: 92px;
+  height: 48px;
+  background-image: url("rca-logo.jpg");
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: center;
   background-size: contain;
-  text-indent: -9999px;
-  overflow: hidden;
+}
+
+.logo::after {
+  content: "ROMWELL CASTILLO AGNO";
+  color: var(--highlight);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.26em;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -390,8 +407,17 @@ h1 {
   }
 
   .logo {
-    width: 230px;
-    height: 48px;
+    min-width: 0;
+  }
+
+  .logo::before {
+    width: 86px;
+    height: 44px;
+  }
+
+  .logo::after {
+    font-size: 13px;
+    letter-spacing: 0.22em;
   }
 
   .nav-links {
@@ -421,8 +447,17 @@ h1 {
   }
 
   .logo {
-    width: 190px;
-    height: 42px;
+    gap: 12px;
+  }
+
+  .logo::before {
+    width: 72px;
+    height: 38px;
+  }
+
+  .logo::after {
+    font-size: 10px;
+    letter-spacing: 0.16em;
   }
 
   .nav-links {
