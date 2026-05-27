@@ -57,16 +57,16 @@ a {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
-  min-width: 430px;
+  gap: 10px;
+  min-width: 410px;
   font-size: 0;
 }
 
 .logo::before {
   content: "";
   display: block;
-  width: 120px;
-  height: 58px;
+  width: 118px;
+  height: 56px;
   background-image: url("rca-logo.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -447,7 +447,7 @@ h1 {
   }
 
   .logo {
-    gap: 12px;
+    gap: 8px;
   }
 
   .logo::before {
