@@ -81,6 +81,22 @@ a {
   color: var(--highlight);
 }
 
+.nav-links a.active {
+  color: var(--highlight);
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background: var(--highlight);
+  opacity: 0.85;
+}
+
 main {
   max-width: 1120px;
   margin: 0 auto;
@@ -261,7 +277,7 @@ h1 {
   line-height: 1.5;
 }
 
-/* FIXED TIMELINE ALIGNMENT */
+/* Timeline */
 .timeline {
   position: relative;
   display: grid;
@@ -403,6 +419,10 @@ h1 {
   .nav-links {
     flex-wrap: wrap;
     gap: 14px;
+  }
+
+  .nav-links a.active::after {
+    bottom: -5px;
   }
 
   .section {
