@@ -57,8 +57,8 @@ a {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  min-width: 410px;
+  gap: 6px;
+  min-width: 330px;
   font-size: 0;
 }
 
@@ -76,9 +76,9 @@ a {
 .logo::after {
   content: "ROMWELL CASTILLO AGNO";
   color: var(--highlight);
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.25em;
   line-height: 1;
   white-space: nowrap;
 }
@@ -408,6 +408,7 @@ h1 {
 
   .logo {
     min-width: 0;
+    gap: 6px;
   }
 
   .logo::before {
@@ -416,8 +417,8 @@ h1 {
   }
 
   .logo::after {
-    font-size: 13px;
-    letter-spacing: 0.22em;
+    font-size: 12px;
+    letter-spacing: 0.20em;
   }
 
   .nav-links {
@@ -447,7 +448,7 @@ h1 {
   }
 
   .logo {
-    gap: 8px;
+    gap: 5px;
   }
 
   .logo::before {
@@ -456,8 +457,8 @@ h1 {
   }
 
   .logo::after {
-    font-size: 10px;
-    letter-spacing: 0.16em;
+    font-size: 9px;
+    letter-spacing: 0.14em;
   }
 
   .nav-links {
