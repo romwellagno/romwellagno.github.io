@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>System Details | Romwell C. Agno</title>
+
+  <meta name="description" content="Technical system details of the E-Barangay Appointment and Queue Management System by Romwell C. Agno, including modules, workflow, requirements, and queue logic.">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">RCA</a>
+
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="system.html">System</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-line">
+      <p class="eyebrow">System Details</p>
+
+      <h1>E-Barangay Appointment and Queue Management System.</h1>
+
+      <p class="hero-subtitle">
+        A desktop-based Java Swing application concept that integrates
+        appointment scheduling, queue validation, queue administration, and a
+        real-time Now Serving display for barangay service operations.
+      </p>
+
+      <div class="hero-tags">
+        <span>Desktop GUI Application</span>
+        <span>Java</span>
+        <span>Java Swing</span>
+        <span>Queue Management</span>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="section-label">01 / Overview</div>
+
+      <div class="section-content">
+        <h2>A staged system for appointment booking, queue validation, and service processing.</h2>
+
+        <p>
+          The E-Barangay Appointment and Queue Management System is designed to
+          simulate a more organized barangay service workflow. Instead of
+          treating appointment scheduling and queue processing as one continuous
+          action, the system separates them into clearer stages: appointment
+          creation, queue check-in, queue validation, administrative control, and
+          Now Serving updates.
+        </p>
+
+        <p>
+          This structure reflects a more realistic service environment because
+          users must confirm their presence before being included in the active
+          queue. Barangay employees can then manage the validated queue through
+          an administration interface.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="section-label">02 / Technical Summary</div>
+
+      <div class="details-grid">
+        <article class="detail-card">
+          <span>System Type</span>
+          <strong>Desktop GUI Application</strong>
+        </article>
+
+        <article class="detail-card">
+          <span>Language</span>
+          <strong>Java</strong>
+        </article>
+
+        <article class="detail-card">
+          <span>GUI Framework</span>
+          <strong>Java Swing</strong>
+        </article>
+
+        <article class="detail-card">
+          <span>Data Structure</span>
+          <strong>ArrayList for storing queue data</strong>
+        </article>
+
+        <article class="detail-card">
+          <span>Queue Format</span>
+          <strong>Q0001 for Regular users, SP0001 for Senior/PWD users</strong>
+        </article>
+
+        <article class="detail-card">
+          <span>Main Output</span>
+          <strong>Queue number, assigned window, waiting time, and Now Serving updates</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="section-label">03 / Core Modules</div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Appointment Module</h3>
+
+          <p>
+            Allows users to enter their name, choose a barangay service, select
+            a date and time, and identify their user type before receiving a
+            generated queue number.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Queue Module</h3>
+
+          <p>
+            Handles check-in and validation. Users must confirm their queue
+            number before they are added to the active queue for service
+            processing.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Queue Administration</h3>
+
+          <p>
+            Gives barangay staff control over queue movement, service windows,
+            and the process of calling the next validated client.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Now Serving Display</h3>
+
+          <p>
+            Shows the current queue number being served for each service window
+            and updates when the queue advances.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>User Classification</h3>
+
+          <p>
+            Supports Regular, Senior Citizen, and PWD users, allowing the system
+            to apply queue formats and conditional prioritization.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Accessibility Design</h3>
+
+          <p>
+            Uses readable layouts, clear labels, and accessible interface
+            elements to support users such as senior citizens and persons with
+            disabilities.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="section-label">04 / System Flow</div>
+
+      <div class="project-list">
+        <article class="project-item">
+          <div class="project-topline">
+            <span class="project-status">Step 01</span>
+            <span class="project-year">User</span>
+          </div>
+
+          <h3>Book Appointment</h3>
+
+          <p>
+            The user enters personal details, selects the desired service,
+            chooses a date and time, and identifies their user type.
+          </p>
+        </article>
+
+        <article class="project-item">
+          <div class="project-topline">
+            <span class="project-status">Step 02</span>
+            <span class="project-year">System</span>
+          </div>
+
+          <h3>Generate Queue Number</h3>
+
+          <p>
+            The system generates a queue number using the correct format:
+            Q0001 for Regular users and SP0001 for Senior/PWD users.
+          </p>
+        </article>
+
+        <article class="project-item">
+          <div class="project-topline">
+            <span class="project-status">Step 03</span>
+            <span class="project-year">Validation</span>
+          </div>
+
+          <h3>Check In and Validate Queue Entry</h3>
+
+          <p>
+            The user proceeds to the Queue Module, enters their name and queue
+            number, and must be validated before being added to the active queue.
+          </p>
+        </article>
+
+        <article class="project-item">
+          <div class="project-topline">
+            <span class="project-status">Step 04</span>
+            <span class="project-year">Admin</span>
+          </div>
+
+          <h3>Process Queue</h3>
+
+          <p>
+            Barangay employees use the Queue Administration Module to call the
+            next client, manage service windows, and update queue progress.
+          </p>
+        </article>
+
+        <article class="project-item">
+          <div class="project-topline">
+            <span class="project-status">Step 05</span>
+            <span class="project-year">Display</span>
+          </div>
+
+          <h3>Update Now Serving</h3>
+
+          <p>
+            The Now Serving Display updates automatically to show the current
+            queue number being served for each service window.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="section-label">05 / Program Design</div>
+
+      <div class="details-grid">
+        <article class="detail-card">
+          <span>main()</span>
+          <strong>Initializes the application</strong>
+        </article>
+
+        <article class="detail-card">
+          <span>bookAppointment()</span>
+          <strong>Handles appointment input and queue generation</strong>
+        </article>
+
+        <article class="detail-card">
+          <span>checkInQueue()</span>
+          <strong>Validates queue entries before active processing</strong>
+        </article>
+
+        <article class="detail-card">
+          <span>generateQueueNumber()</span>
+          <strong>Assigns Q or SP queue number format</strong>
+        </article>
+
+        <article class="detail-card">
+          <span>assignWindow()</span>
+          <strong>Determines the service window for the user</strong>
+        </article>
+
+        <article class="detail-card">
+          <span>updateNowServing()</span>
+          <strong>Updates the current number displayed per service window</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="section-label">06 / Requirements</div>
+
+      <div class="details-grid">
+        <article class="detail-card">
+          <span>Software</span>
+          <strong>Java Development Kit, Java Swing Library, VS Code, NetBeans, or Eclipse</strong>
+        </article>
+
+        <article class="detail-card">
+          <span>Hardware</span>
+          <strong>Minimum 4GB RAM, dual-core processor, desktop or laptop computer</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">07 / Learning Value</div>
+
+      <div class="section-content">
+        <h2>A project that connects object-oriented programming with service workflow design.</h2>
+
+        <p>
+          This system supports my learning in object-oriented programming,
+          graphical user interface design, validation logic, module separation,
+          queue processing, and user-centered planning. It also connects my
+          previous service and operations background with my current Computer
+          Engineering direction.
+        </p>
+
+        <div class="contact-links">
+          <a href="projects.html">Back to Projects</a>
+          <a href="ideas.html">View Project Ideas</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Romwell C. Agno. Built with GitHub Pages.</p>
+  </footer>
+</body>
+</html>
