@@ -331,11 +331,14 @@ p {
   margin-top: 22px;
 }
 
-/* Corrected Timeline Style */
+/* Final Timeline Alignment */
 .timeline {
-  --timeline-line-x: 350px;
+  --timeline-year-column: 255px;
+  --timeline-axis-column: 48px;
+  --timeline-card-gap: 42px;
   --timeline-dot-size: 18px;
   --timeline-dot-border: 7px;
+  --timeline-dot-total: calc(var(--timeline-dot-size) + (var(--timeline-dot-border) * 2));
 
   position: relative;
   display: grid;
@@ -346,9 +349,9 @@ p {
 .timeline::before {
   content: "";
   position: absolute;
-  top: 12px;
-  bottom: 12px;
-  left: var(--timeline-line-x);
+  top: 18px;
+  bottom: 18px;
+  left: calc(var(--timeline-year-column) + (var(--timeline-axis-column) / 2));
   width: 1px;
   background: linear-gradient(
     to bottom,
@@ -361,19 +364,22 @@ p {
 .timeline-item {
   position: relative;
   display: grid;
-  grid-template-columns: 285px 1fr;
-  gap: 110px;
+  grid-template-columns:
+    var(--timeline-year-column)
+    var(--timeline-axis-column)
+    1fr;
+  column-gap: var(--timeline-card-gap);
   align-items: start;
 }
 
 .timeline-item::before {
   content: "";
   position: absolute;
-  top: 28px;
+  top: 32px;
   left: calc(
-    var(--timeline-line-x) -
-    (var(--timeline-dot-size) / 2) -
-    var(--timeline-dot-border)
+    var(--timeline-year-column) +
+    (var(--timeline-axis-column) / 2) -
+    (var(--timeline-dot-total) / 2)
   );
   z-index: 2;
   width: var(--timeline-dot-size);
@@ -387,9 +393,10 @@ p {
 }
 
 .timeline-year {
+  grid-column: 1;
   justify-self: end;
   align-self: start;
-  margin-top: 24px;
+  margin-top: 34px;
   padding: 0;
   border: none;
   border-radius: 0;
@@ -404,6 +411,7 @@ p {
 }
 
 .timeline-content {
+  grid-column: 3;
   padding: 36px;
   border: 1px solid rgba(184, 227, 233, 0.14);
   border-radius: 30px;
@@ -654,30 +662,31 @@ body.modal-open {
   }
 
   .timeline {
-    --timeline-line-x: 20px;
-    padding-left: 58px;
+    padding-left: 52px;
+    gap: 28px;
   }
 
   .timeline::before {
-    left: var(--timeline-line-x);
+    left: 18px;
   }
 
   .timeline-item {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 14px;
   }
 
   .timeline-item::before {
-    top: 8px;
+    top: 6px;
     left: calc(
-      var(--timeline-line-x) -
-      (var(--timeline-dot-size) / 2) -
-      var(--timeline-dot-border) -
-      58px
+      18px -
+      (var(--timeline-dot-total) / 2) -
+      52px
     );
   }
 
   .timeline-year {
+    grid-column: 1;
     justify-self: start;
     margin-top: 0;
     text-align: left;
@@ -685,6 +694,7 @@ body.modal-open {
   }
 
   .timeline-content {
+    grid-column: 1;
     padding: 30px;
     border-radius: 26px;
   }
@@ -777,16 +787,17 @@ body.modal-open {
 
 @media (max-width: 560px) {
   .timeline {
-    --timeline-line-x: 16px;
     padding-left: 46px;
-    gap: 28px;
+  }
+
+  .timeline::before {
+    left: 16px;
   }
 
   .timeline-item::before {
     left: calc(
-      var(--timeline-line-x) -
-      (var(--timeline-dot-size) / 2) -
-      var(--timeline-dot-border) -
+      16px -
+      (var(--timeline-dot-total) / 2) -
       46px
     );
     width: 18px;
