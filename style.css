@@ -333,7 +333,7 @@ p {
   margin-top: 22px;
 }
 
-/* Final Timeline Layout */
+/* Desktop Timeline Layout */
 .timeline {
   --timeline-year-column: 220px;
   --timeline-axis-column: 110px;
@@ -670,39 +670,42 @@ body.modal-open {
   }
 
   .timeline {
-    padding-left: 52px;
+    padding-left: 0;
     gap: 28px;
   }
 
   .timeline::before {
-    left: 18px;
+    left: 32px;
+    top: 10px;
+    bottom: 10px;
   }
 
   .timeline-item {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: 72px 1fr;
+    column-gap: 18px;
+    row-gap: 18px;
+    align-items: start;
   }
 
   .timeline-item::before {
-    top: 6px;
-    left: calc(
-      18px -
-      (var(--timeline-dot-total) / 2) -
-      52px
-    );
+    top: 8px;
+    left: calc(32px - (var(--timeline-dot-total) / 2));
   }
 
   .timeline-year {
-    grid-column: 1;
+    grid-column: 2;
+    grid-row: 1;
     justify-self: start;
-    margin-top: 0;
+    align-self: start;
+    margin-top: 16px;
     text-align: left;
     font-size: 1.05rem;
   }
 
   .timeline-content {
-    grid-column: 1;
+    grid-column: 2;
+    grid-row: 2;
     padding: 30px;
     border-radius: 26px;
   }
@@ -834,23 +837,27 @@ body.modal-open {
     font-size: 0.78rem;
   }
 
-  .timeline {
-    padding-left: 46px;
+  .timeline::before {
+    left: 32px;
   }
 
-  .timeline::before {
-    left: 16px;
+  .timeline-item {
+    grid-template-columns: 72px 1fr;
+    column-gap: 18px;
+    row-gap: 18px;
   }
 
   .timeline-item::before {
-    left: calc(
-      16px -
-      (var(--timeline-dot-total) / 2) -
-      46px
-    );
+    top: 8px;
+    left: calc(32px - (var(--timeline-dot-total) / 2));
     width: 18px;
     height: 18px;
     border-width: 7px;
+  }
+
+  .timeline-year {
+    margin-top: 16px;
+    font-size: 1.05rem;
   }
 
   .timeline-content {
