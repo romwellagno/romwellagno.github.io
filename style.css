@@ -331,14 +331,16 @@ p {
   margin-top: 22px;
 }
 
-/* Final Timeline Alignment */
+/* Timeline Layout */
 .timeline {
-  --timeline-year-column: 255px;
-  --timeline-axis-column: 48px;
-  --timeline-card-gap: 42px;
+  --timeline-year-column: 230px;
+  --timeline-axis-column: 96px;
+  --timeline-card-gap: 64px;
   --timeline-dot-size: 18px;
   --timeline-dot-border: 7px;
   --timeline-dot-total: calc(var(--timeline-dot-size) + (var(--timeline-dot-border) * 2));
+  --timeline-dot-top: 36px;
+  --timeline-year-center-fix: 10px;
 
   position: relative;
   display: grid;
@@ -349,8 +351,8 @@ p {
 .timeline::before {
   content: "";
   position: absolute;
-  top: 18px;
-  bottom: 18px;
+  top: 20px;
+  bottom: 20px;
   left: calc(var(--timeline-year-column) + (var(--timeline-axis-column) / 2));
   width: 1px;
   background: linear-gradient(
@@ -375,7 +377,7 @@ p {
 .timeline-item::before {
   content: "";
   position: absolute;
-  top: 32px;
+  top: var(--timeline-dot-top);
   left: calc(
     var(--timeline-year-column) +
     (var(--timeline-axis-column) / 2) -
@@ -396,7 +398,11 @@ p {
   grid-column: 1;
   justify-self: end;
   align-self: start;
-  margin-top: 34px;
+  margin-top: calc(
+    var(--timeline-dot-top) +
+    (var(--timeline-dot-total) / 2) -
+    var(--timeline-year-center-fix)
+  );
   padding: 0;
   border: none;
   border-radius: 0;
@@ -625,7 +631,7 @@ body.modal-open {
   background: rgba(79, 124, 130, 0.92);
 }
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 900px) {
   .nav {
     min-height: auto;
@@ -700,7 +706,12 @@ body.modal-open {
   }
 }
 
+/* Mobile */
 @media (max-width: 760px) {
+  .site-header {
+    position: static;
+  }
+
   body {
     line-height: 1.65;
   }
@@ -709,6 +720,26 @@ body.modal-open {
   .nav,
   .footer {
     width: min(100% - 28px, var(--max-width));
+  }
+
+  .nav {
+    padding: 18px 0;
+    gap: 16px;
+  }
+
+  .logo {
+    width: 82px;
+    height: 36px;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-links a {
+    padding: 6px 10px;
+    font-size: 0.82rem;
+    line-height: 1;
   }
 
   h1 {
@@ -785,7 +816,22 @@ body.modal-open {
   }
 }
 
+/* Small Mobile */
 @media (max-width: 560px) {
+  .nav {
+    padding: 16px 0;
+    gap: 14px;
+  }
+
+  .nav-links {
+    gap: 7px;
+  }
+
+  .nav-links a {
+    padding: 6px 9px;
+    font-size: 0.78rem;
+  }
+
   .timeline {
     padding-left: 46px;
   }
