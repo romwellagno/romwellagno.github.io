@@ -361,15 +361,15 @@ p {
 .timeline-item {
   position: relative;
   display: grid;
-  grid-template-columns: calc(var(--timeline-line-x) - 46px) 1fr;
-  gap: 92px;
+  grid-template-columns: 285px 1fr;
+  gap: 110px;
   align-items: start;
 }
 
 .timeline-item::before {
   content: "";
   position: absolute;
-  top: 22px;
+  top: 28px;
   left: calc(
     var(--timeline-line-x) -
     (var(--timeline-dot-size) / 2) -
@@ -389,7 +389,7 @@ p {
 .timeline-year {
   justify-self: end;
   align-self: start;
-  margin-top: 12px;
+  margin-top: 24px;
   padding: 0;
   border: none;
   border-radius: 0;
@@ -397,9 +397,10 @@ p {
   color: #B8E3E9;
   font-size: 0.95rem;
   font-weight: 900;
-  letter-spacing: 0.08em;
-  line-height: 1.2;
+  letter-spacing: 0.12em;
+  line-height: 1;
   text-align: right;
+  white-space: nowrap;
 }
 
 .timeline-content {
@@ -667,13 +668,13 @@ body.modal-open {
   }
 
   .timeline-item::before {
+    top: 8px;
     left: calc(
       var(--timeline-line-x) -
       (var(--timeline-dot-size) / 2) -
       var(--timeline-dot-border) -
       58px
     );
-    top: 8px;
   }
 
   .timeline-year {
