@@ -166,7 +166,7 @@
         <article class="project-item">
           <div class="project-topline">
             <span class="project-status">Module 01</span>
-            <span class="project-year">User Side</span>
+            <span class="project-year">Citizen Side</span>
           </div>
 
           <h3>Appointment Management</h3>
@@ -269,7 +269,43 @@
     </section>
 
     <section class="section section-line">
-      <div class="section-label">06 / Learning Value</div>
+      <div class="section-label">06 / Screenshot Gallery</div>
+
+      <div class="section-content">
+        <h2>Four-panel preview of the E-Barangay system modules.</h2>
+
+        <p>
+          This gallery shows selected public-safe interface previews from the
+          E-Barangay Appointment and Queue Management System. Click any image to
+          view it in a larger fullscreen preview.
+        </p>
+      </div>
+
+      <div class="screenshot-collage">
+        <button class="screenshot-panel" type="button" data-gallery-src="ebarangay-appointment.png" data-gallery-title="Appointment / Citizen Side">
+          <img src="ebarangay-appointment.png" alt="E-Barangay appointment module screenshot">
+          <span>Appointment / Citizen Side</span>
+        </button>
+
+        <button class="screenshot-panel" type="button" data-gallery-src="ebarangay-queue.png" data-gallery-title="Queue Management">
+          <img src="ebarangay-queue.png" alt="E-Barangay queue management module screenshot">
+          <span>Queue Management</span>
+        </button>
+
+        <button class="screenshot-panel" type="button" data-gallery-src="ebarangay-admin.png" data-gallery-title="Admin / Staff Panel">
+          <img src="ebarangay-admin.png" alt="E-Barangay admin staff panel screenshot">
+          <span>Admin / Staff Panel</span>
+        </button>
+
+        <button class="screenshot-panel" type="button" data-gallery-src="ebarangay-display.png" data-gallery-title="Now Serving Display">
+          <img src="ebarangay-display.png" alt="E-Barangay now serving display screenshot">
+          <span>Now Serving Display</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="section-label">07 / Learning Value</div>
 
       <div class="grid">
         <article class="card">
@@ -305,7 +341,7 @@
     </section>
 
     <section class="section section-line">
-      <div class="section-label">07 / Protected Details</div>
+      <div class="section-label">08 / Protected Details</div>
 
       <div class="section-content">
         <h2>Some project details are intentionally not published.</h2>
@@ -325,7 +361,7 @@
     </section>
 
     <section class="section">
-      <div class="section-label">08 / Navigation</div>
+      <div class="section-label">09 / Navigation</div>
 
       <div class="section-content">
         <h2>Continue exploring my portfolio.</h2>
@@ -340,6 +376,18 @@
     </section>
   </main>
 
+  <div class="gallery-modal" id="galleryModal" aria-hidden="true">
+    <div class="gallery-modal-backdrop" data-gallery-close></div>
+
+    <div class="gallery-modal-content" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+      <button class="gallery-close" type="button" data-gallery-close aria-label="Close image preview">×</button>
+
+      <p class="gallery-modal-title" id="galleryModalTitle">Screenshot Preview</p>
+
+      <img id="galleryModalImage" src="" alt="Expanded E-Barangay screenshot preview">
+    </div>
+  </div>
+
   <footer class="footer">
     <p>© 2026 Romwell C. Agno. Built with GitHub Pages.</p>
 
@@ -352,5 +400,44 @@
       <a href="contact.html">Contact</a>
     </div>
   </footer>
+
+  <script>
+    const galleryButtons = document.querySelectorAll(".screenshot-panel");
+    const galleryModal = document.getElementById("galleryModal");
+    const galleryImage = document.getElementById("galleryModalImage");
+    const galleryTitle = document.getElementById("galleryModalTitle");
+    const galleryCloseButtons = document.querySelectorAll("[data-gallery-close]");
+
+    function openGallery(src, title) {
+      galleryImage.src = src;
+      galleryTitle.textContent = title;
+      galleryModal.classList.add("is-open");
+      galleryModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeGallery() {
+      galleryModal.classList.remove("is-open");
+      galleryModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      galleryImage.src = "";
+    }
+
+    galleryButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        openGallery(button.dataset.gallerySrc, button.dataset.galleryTitle);
+      });
+    });
+
+    galleryCloseButtons.forEach((button) => {
+      button.addEventListener("click", closeGallery);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && galleryModal.classList.contains("is-open")) {
+        closeGallery();
+      }
+    });
+  </script>
 </body>
 </html>
