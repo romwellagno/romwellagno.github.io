@@ -6,7 +6,7 @@
 
   <title>Romwell C. Agno | Computer Engineering Portfolio</title>
 
-  <meta name="description" content="Professional portfolio of Romwell C. Agno, a Computer Engineering student building practical digital systems, engineering proposals, Java applications, AI assistant concepts, C++ programming foundation, Eclipse IDE use, Llama-based AI experimentation, Second Brain workflows, technical documentation, and future engineering projects.">
+  <meta name="description" content="Professional portfolio of Romwell C. Agno, a Computer Engineering student building practical digital systems, engineering proposals, Java applications, ZORA AI assistant, Second Brain workflows, Llama-based AI experimentation, and technical documentation.">
 
   <link rel="icon" type="image/png" href="rca-logo.png">
   <link rel="stylesheet" href="style.css">
@@ -28,30 +28,59 @@
   </header>
 
   <main>
-    <section class="hero section-line">
-      <p class="eyebrow">Computer Engineering Portfolio</p>
+    <section class="dual-hero section-line">
+      <div class="dual-side dual-left" data-hero-side="real">
+        <p class="eyebrow">Computer Engineering Student</p>
 
-      <h1>Practical digital systems, documented with purpose.</h1>
+        <h1>Computer<br>Engineering<br>Student</h1>
 
-      <p class="hero-subtitle">
-        I am Romwell C. Agno, a Computer Engineering student building a portfolio
-        around engineering proposals, C++ programming foundation, Java desktop
-        applications, Eclipse IDE workflow, AI assistant development with Llama,
-        Second Brain knowledge workflows, service systems, technical documentation,
-        and future engineering projects.
-      </p>
+        <p>
+          Focused on practical systems, engineering proposals, public-service
+          technology, C++ foundation, Java desktop applications, and documented
+          academic development.
+        </p>
 
-      <div class="hero-tags">
-        <span>Computer Engineering</span>
-        <span>C++ Foundation</span>
-        <span>Java Swing</span>
-        <span>Llama</span>
-        <span>Second Brain</span>
+        <div class="dual-tags">
+          <span>C++ Foundation</span>
+          <span>Java Swing</span>
+          <span>Eclipse IDE</span>
+          <span>HYDROFLO</span>
+          <span>E-Barangay</span>
+        </div>
+
+        <div class="contact-links">
+          <a href="projects.html">View Academic Projects</a>
+        </div>
       </div>
 
-      <div class="contact-links">
-        <a href="projects.html">View Projects</a>
-        <a href="about.html">About Me</a>
+      <div class="dual-portrait" aria-label="Romwell C. Agno split portrait">
+        <img src="romwell-real.png" alt="Romwell C. Agno real portrait" class="dual-img dual-real">
+        <img src="romwell-ai.png" alt="Romwell C. Agno AI-styled portrait" class="dual-img dual-ai">
+        <div class="dual-divider"></div>
+      </div>
+
+      <div class="dual-side dual-right" data-hero-side="ai">
+        <p class="eyebrow">AI & Systems Builder</p>
+
+        <h1>AI &<br>Systems<br>Builder</h1>
+
+        <p>
+          Building ZORA, a Second Brain, Java desktop systems, engineering
+          automation concepts, Llama-based workflows, and future practical
+          system prototypes.
+        </p>
+
+        <div class="dual-tags">
+          <span>ZORA</span>
+          <span>Second Brain</span>
+          <span>Llama</span>
+          <span>Obsidian</span>
+          <span>System Concepts</span>
+        </div>
+
+        <div class="contact-links">
+          <a href="ideas.html">View AI Direction</a>
+        </div>
       </div>
     </section>
 
@@ -102,12 +131,6 @@
           more effectively.
         </p>
 
-        <p>
-          This portfolio will continue to grow as I complete academic projects,
-          build prototypes, document technical concepts, and improve my ability
-          to design practical digital systems.
-        </p>
-
         <div class="contact-links">
           <a href="projects.html">View Project Archive</a>
           <a href="ideas.html">View Future Ideas</a>
@@ -116,7 +139,7 @@
     </section>
 
     <section class="section section-line">
-      <div class="section-label">02 / Featured Projects</div>
+      <div class="section-label">02 / Featured Systems</div>
 
       <div class="project-list">
         <article class="project-item">
@@ -368,36 +391,8 @@
       </div>
     </section>
 
-    <section class="section section-line">
-      <div class="section-label">05 / Professional Direction</div>
-
-      <div class="section-content">
-        <h2>A portfolio for learning, documentation, and future career use.</h2>
-
-        <p>
-          This website is designed as a professional archive for my Computer
-          Engineering journey. It organizes my projects, technical notes, system
-          concepts, AI experiments, learning workflows, engineering proposals,
-          programming foundation, and future prototypes in one place.
-        </p>
-
-        <p>
-          My current focus is to develop practical systems that connect service
-          experience, user needs, digital workflows, programming fundamentals,
-          engineering design, and emerging AI-related tools. As I continue
-          learning, this portfolio will grow with new projects, case studies,
-          and technical documentation.
-        </p>
-
-        <div class="contact-links">
-          <a href="ideas.html">View Ideas</a>
-          <a href="contact.html">Contact Me</a>
-        </div>
-      </div>
-    </section>
-
     <section class="section">
-      <div class="section-label">06 / Quick Links</div>
+      <div class="section-label">05 / Quick Links</div>
 
       <div class="details-grid">
         <article class="detail-card">
@@ -445,5 +440,38 @@
       <a href="contact.html">Contact</a>
     </div>
   </footer>
+
+  <script>
+    const hero = document.querySelector(".dual-hero");
+    const leftSide = document.querySelector(".dual-left");
+    const rightSide = document.querySelector(".dual-right");
+
+    if (hero && leftSide && rightSide) {
+      leftSide.addEventListener("mouseenter", () => {
+        hero.classList.add("show-real");
+        hero.classList.remove("show-ai");
+      });
+
+      rightSide.addEventListener("mouseenter", () => {
+        hero.classList.add("show-ai");
+        hero.classList.remove("show-real");
+      });
+
+      hero.addEventListener("mouseleave", () => {
+        hero.classList.remove("show-real");
+        hero.classList.remove("show-ai");
+      });
+
+      leftSide.addEventListener("touchstart", () => {
+        hero.classList.add("show-real");
+        hero.classList.remove("show-ai");
+      });
+
+      rightSide.addEventListener("touchstart", () => {
+        hero.classList.add("show-ai");
+        hero.classList.remove("show-real");
+      });
+    }
+  </script>
 </body>
 </html>
