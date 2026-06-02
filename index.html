@@ -6,15 +6,15 @@
 
   <title>Romwell C. Agno | Computer Engineering Portfolio</title>
 
-  <meta name="description" content="Professional portfolio of Romwell C. Agno, a Computer Engineering student building practical digital systems, engineering proposals, Java applications, ZORA AI assistant, Second Brain workflows, Llama-based AI experimentation, and technical documentation.">
+  <meta name="description" content="Professional portfolio of Romwell C. Agno, a Computer Engineering student building practical systems, engineering proposals, Java applications, ZORA AI assistant, Second Brain workflows, and Llama-based AI experimentation.">
 
   <link rel="icon" type="image/png" href="rca-logo.png">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header class="site-header">
-    <nav class="nav">
+  <header class="site-header clean-header">
+    <nav class="nav clean-nav">
       <a href="index.html" class="logo">RCA</a>
 
       <div class="nav-links">
@@ -27,59 +27,49 @@
     </nav>
   </header>
 
-  <main>
-    <section class="dual-hero section-line">
-      <div class="dual-side dual-left" data-hero-side="real">
-        <p class="eyebrow">Computer Engineering Student</p>
-
-        <h1>Computer<br>Engineering<br>Student</h1>
-
-        <p>
-          Focused on practical systems, engineering proposals, public-service
-          technology, C++ foundation, Java desktop applications, and documented
-          academic development.
-        </p>
-
-        <div class="dual-tags">
-          <span>C++ Foundation</span>
-          <span>Java Swing</span>
-          <span>Eclipse IDE</span>
-          <span>HYDROFLO</span>
-          <span>E-Barangay</span>
-        </div>
-
-        <div class="contact-links">
-          <a href="projects.html">View Academic Projects</a>
-        </div>
-      </div>
-
-      <div class="dual-portrait" aria-label="Romwell C. Agno split portrait">
-        <img src="romwell-real.png" alt="Romwell C. Agno real portrait" class="dual-img dual-real">
-        <img src="romwell-ai.png" alt="Romwell C. Agno AI-styled portrait" class="dual-img dual-ai">
-        <div class="dual-divider"></div>
-      </div>
-
-      <div class="dual-side dual-right" data-hero-side="ai">
-        <p class="eyebrow">AI & Systems Builder</p>
+  <main class="home-main">
+    <section class="clean-dual-hero">
+      <div class="clean-side clean-left" data-side="ai">
+        <p class="clean-kicker">AI & Systems Builder</p>
 
         <h1>AI &<br>Systems<br>Builder</h1>
 
-        <p>
+        <p class="clean-copy">
           Building ZORA, a Second Brain, Java desktop systems, engineering
           automation concepts, Llama-based workflows, and future practical
           system prototypes.
         </p>
 
-        <div class="dual-tags">
+        <div class="clean-tags">
           <span>ZORA</span>
           <span>Second Brain</span>
           <span>Llama</span>
           <span>Obsidian</span>
-          <span>System Concepts</span>
         </div>
+      </div>
 
-        <div class="contact-links">
-          <a href="ideas.html">View AI Direction</a>
+      <div class="clean-portrait" aria-label="Romwell C. Agno split portrait">
+        <img src="romwell-ai.png" alt="Romwell C. Agno AI-styled portrait" class="clean-img clean-ai">
+        <img src="romwell-real.png" alt="Romwell C. Agno real portrait" class="clean-img clean-real">
+        <div class="clean-divider"></div>
+      </div>
+
+      <div class="clean-side clean-right" data-side="real">
+        <p class="clean-kicker">Computer Engineering Student</p>
+
+        <h1>Computer<br>Engineering<br>Student</h1>
+
+        <p class="clean-copy">
+          Focused on practical systems, engineering proposals, public-service
+          technology, C++ foundation, Java desktop applications, and documented
+          academic development.
+        </p>
+
+        <div class="clean-tags">
+          <span>C++ Foundation</span>
+          <span>Java Swing</span>
+          <span>Eclipse IDE</span>
+          <span>E-Barangay</span>
         </div>
       </div>
     </section>
@@ -343,56 +333,8 @@
       </div>
     </section>
 
-    <section class="section section-line">
-      <div class="section-label">04 / Portfolio Sections</div>
-
-      <div class="grid">
-        <article class="card">
-          <h3>About</h3>
-
-          <p>
-            My background, timeline, skills, programming foundation, AI development,
-            and transition from service leadership into Computer Engineering and
-            technical system development.
-          </p>
-
-          <div class="contact-links">
-            <a href="about.html">Open About</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Projects</h3>
-
-          <p>
-            A project archive for engineering proposals, academic outputs, system
-            concepts, AI assistant development, Second Brain learning workflows,
-            Java-based applications, and future Computer Engineering work.
-          </p>
-
-          <div class="contact-links">
-            <a href="projects.html">Open Projects</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>System</h3>
-
-          <p>
-            A technical systems direction page covering engineering automation,
-            public-service systems, AI assistant development, Second Brain
-            workflows, and future system concepts.
-          </p>
-
-          <div class="contact-links">
-            <a href="system.html">Open System</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <section class="section">
-      <div class="section-label">05 / Quick Links</div>
+      <div class="section-label">04 / Quick Links</div>
 
       <div class="details-grid">
         <article class="detail-card">
@@ -442,34 +384,34 @@
   </footer>
 
   <script>
-    const hero = document.querySelector(".dual-hero");
-    const leftSide = document.querySelector(".dual-left");
-    const rightSide = document.querySelector(".dual-right");
+    const cleanHero = document.querySelector(".clean-dual-hero");
+    const cleanLeft = document.querySelector(".clean-left");
+    const cleanRight = document.querySelector(".clean-right");
 
-    if (hero && leftSide && rightSide) {
-      leftSide.addEventListener("mouseenter", () => {
-        hero.classList.add("show-real");
-        hero.classList.remove("show-ai");
+    if (cleanHero && cleanLeft && cleanRight) {
+      cleanLeft.addEventListener("mouseenter", () => {
+        cleanHero.classList.add("show-ai");
+        cleanHero.classList.remove("show-real");
       });
 
-      rightSide.addEventListener("mouseenter", () => {
-        hero.classList.add("show-ai");
-        hero.classList.remove("show-real");
+      cleanRight.addEventListener("mouseenter", () => {
+        cleanHero.classList.add("show-real");
+        cleanHero.classList.remove("show-ai");
       });
 
-      hero.addEventListener("mouseleave", () => {
-        hero.classList.remove("show-real");
-        hero.classList.remove("show-ai");
+      cleanHero.addEventListener("mouseleave", () => {
+        cleanHero.classList.remove("show-ai");
+        cleanHero.classList.remove("show-real");
       });
 
-      leftSide.addEventListener("touchstart", () => {
-        hero.classList.add("show-real");
-        hero.classList.remove("show-ai");
+      cleanLeft.addEventListener("touchstart", () => {
+        cleanHero.classList.add("show-ai");
+        cleanHero.classList.remove("show-real");
       });
 
-      rightSide.addEventListener("touchstart", () => {
-        hero.classList.add("show-ai");
-        hero.classList.remove("show-real");
+      cleanRight.addEventListener("touchstart", () => {
+        cleanHero.classList.add("show-real");
+        cleanHero.classList.remove("show-ai");
       });
     }
   </script>
