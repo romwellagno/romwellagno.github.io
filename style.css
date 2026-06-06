@@ -457,19 +457,6 @@ p {
   position: relative;
 }
 
-.pulse-card::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 18px rgba(184, 227, 233, 0.76);
-  animation: pulseDot 1.8s ease-out infinite;
-}
-
 .pulse-label {
   display: inline-flex;
   align-items: center;
@@ -487,7 +474,7 @@ p {
   text-transform: uppercase;
 }
 
-.pulse-label::before {
+.pulse-label.is-active::before {
   content: "";
   width: 9px;
   height: 9px;
@@ -565,8 +552,7 @@ p {
   text-transform: uppercase;
 }
 
-.live-indicator,
-.status-dot {
+.live-indicator {
   position: relative;
   width: 10px;
   height: 10px;
@@ -575,14 +561,17 @@ p {
   box-shadow: 0 0 18px rgba(184, 227, 233, 0.76);
 }
 
-.live-indicator::after,
-.status-dot::after {
+.live-indicator::after {
   content: "";
   position: absolute;
   inset: -6px;
   border: 1px solid rgba(184, 227, 233, 0.35);
   border-radius: 50%;
   animation: pulseRing 1.8s ease-out infinite;
+}
+
+.status-dot {
+  display: none;
 }
 
 @keyframes pulseRing {
@@ -1346,19 +1335,13 @@ body.modal-open {
     font-size: 1.5rem;
   }
 
-  .pulse-card::after {
-    top: 18px;
-    right: 18px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .site-orb,
   .live-panel::before,
   .live-indicator::after,
-  .status-dot::after,
-  .pulse-card::after,
-  .pulse-label::before {
+  .pulse-label.is-active::before {
     animation: none;
   }
 
