@@ -42,7 +42,7 @@ A Java Swing desktop application proposal developed using **Java**, **Java Swing
 
 ### ZORA AI Assistant
 
-A personal AI assistant project developed using **Python**, **Visual Studio**, **Llama**, and **Homebrew**. ZORA can now speak fluently, access the internet, and respond to voice-based questions.
+**Z.O.R.A.** stands for **Zettabyte Operations and Research Assistant**, a personal AI system developed by Romwell C. Agno to support voice interaction, internet-based research, academic assistance, and idea generation. It is designed as a practical student-built assistant for learning, productivity, research support, and experimental automation.
 
 ### Second Brain AI System
 
