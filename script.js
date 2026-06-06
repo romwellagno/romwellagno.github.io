@@ -1,5 +1,7 @@
+document.documentElement.classList.add("js-enabled");
+
 const revealElements = document.querySelectorAll(
-  ".reveal-section, .project-item, .card, .detail-card, .dashboard-card, .live-panel"
+  ".reveal-section, .project-item, .card, .detail-card, .dashboard-card, .live-panel, .timeline-item, .screenshot-panel"
 );
 
 const revealObserver = new IntersectionObserver(
@@ -11,13 +13,13 @@ const revealObserver = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.12,
-    rootMargin: "0px 0px -40px 0px"
+    threshold: 0.08,
+    rootMargin: "0px 0px -30px 0px"
   }
 );
 
 revealElements.forEach((element, index) => {
-  element.style.setProperty("--reveal-delay", `${Math.min(index * 45, 360)}ms`);
+  element.style.setProperty("--reveal-delay", `${Math.min(index * 35, 320)}ms`);
   revealObserver.observe(element);
 });
 
