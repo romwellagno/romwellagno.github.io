@@ -930,13 +930,15 @@ body.modal-open {
   background: rgba(79, 124, 130, 0.92);
 }
 
-/* Reveal Animation */
-.reveal-section,
-.project-item,
-.card,
-.detail-card,
-.dashboard-card,
-.live-panel {
+/* Reveal Animation - SAFE VERSION */
+.js-enabled .reveal-section,
+.js-enabled .project-item,
+.js-enabled .card,
+.js-enabled .detail-card,
+.js-enabled .dashboard-card,
+.js-enabled .live-panel,
+.js-enabled .timeline-item,
+.js-enabled .screenshot-panel {
   opacity: 0;
   transform: translateY(26px);
   transition:
@@ -948,12 +950,14 @@ body.modal-open {
   transition-delay: var(--reveal-delay, 0ms);
 }
 
-.reveal-section.is-visible,
-.project-item.is-visible,
-.card.is-visible,
-.detail-card.is-visible,
-.dashboard-card.is-visible,
-.live-panel.is-visible {
+.js-enabled .reveal-section.is-visible,
+.js-enabled .project-item.is-visible,
+.js-enabled .card.is-visible,
+.js-enabled .detail-card.is-visible,
+.js-enabled .dashboard-card.is-visible,
+.js-enabled .live-panel.is-visible,
+.js-enabled .timeline-item.is-visible,
+.js-enabled .screenshot-panel.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1205,12 +1209,14 @@ body.modal-open {
     height: 38px;
   }
 
-  .reveal-section,
-  .project-item,
-  .card,
-  .detail-card,
-  .dashboard-card,
-  .live-panel {
+  .js-enabled .reveal-section,
+  .js-enabled .project-item,
+  .js-enabled .card,
+  .js-enabled .detail-card,
+  .js-enabled .dashboard-card,
+  .js-enabled .live-panel,
+  .js-enabled .timeline-item,
+  .js-enabled .screenshot-panel {
     transform: translateY(18px);
   }
 }
@@ -1282,6 +1288,8 @@ body.modal-open {
   .detail-card,
   .dashboard-card,
   .live-panel,
+  .timeline-item,
+  .screenshot-panel,
   .contact-links a,
   .nav-links a,
   .logo {
