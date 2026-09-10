@@ -22,6 +22,7 @@ This website highlights my current direction in:
 - C++ programming foundation
 - Java and Java Swing desktop applications
 - Eclipse IDE academic development workflow
+- School grading and student records systems
 - Python and Llama-based AI experimentation
 - ZORA AI Assistant development
 - Second Brain knowledge workflow using Llama, Copilot, and Obsidian
@@ -39,6 +40,10 @@ A Computer Engineering academic proposal focused on flood-control support, drain
 ### E-Barangay Appointment and Queue Management System
 
 A Java Swing desktop application proposal developed using **Java**, **Java Swing**, and **Eclipse IDE**. The system focuses on appointment scheduling, queue organization, administrative service flow, and public-service technology learning.
+
+### School Grading System and Records Version 01
+
+A Java academic desktop system developed in IntelliJ IDEA for student information, subject grades, attendance tracking, final report generation, and registered student record management.
 
 ### ZORA AI Assistant
 
@@ -60,6 +65,7 @@ The portfolio currently includes:
 - `contact.html` — Professional contact links
 - `hydroflo.html` — Dedicated HYDROFLO project page
 - `ebarangay.html` — Dedicated E-Barangay system page
+- `school-grading.html` — Dedicated School Grading System and Records project page
 - `style.css` — Main visual styling and responsive layout
 
 ## Technology Used
