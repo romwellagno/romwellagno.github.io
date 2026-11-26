@@ -23,9 +23,9 @@ This website highlights my current direction in:
 - Java and Java Swing desktop applications
 - Eclipse IDE academic development workflow
 - School grading and student records systems
-- Python and Llama-based AI experimentation
+- Python and local Ollama-based AI experimentation
 - ZORA AI Assistant development
-- Second Brain knowledge workflow using Llama, Copilot, and Obsidian
+- Second Brain knowledge workflow using local Ollama, Copilot, and Obsidian
 - Engineering proposals and technical documentation
 - Public-service and automation system concepts
 
@@ -51,7 +51,7 @@ A Java academic desktop system developed in IntelliJ IDEA for student informatio
 
 ### Second Brain AI System
 
-A personal learning and knowledge workflow built using **Llama**, **Copilot**, and **Obsidian** as storage. It helps organize lecture-based information, generate new ideas from class materials, and support better understanding of academic subjects.
+A personal learning and knowledge workflow built using **local Ollama**, **Copilot**, and **Obsidian** as storage. It helps organize lecture-based information, generate new ideas from class materials, and support better understanding of academic subjects.
 
 ## Website Pages
 
@@ -83,7 +83,7 @@ Additional project tools and learning technologies represented in the portfolio 
 - Java Swing
 - Eclipse IDE
 - Python
-- Llama
+- Local Ollama
 - Homebrew
 - Copilot
 - Obsidian
