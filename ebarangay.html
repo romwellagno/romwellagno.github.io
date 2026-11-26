@@ -247,23 +247,23 @@
       </div>
 
       <div class="screenshot-collage">
-        <button class="screenshot-panel" type="button" data-image="ebarangay-appointment.png" data-title="Appointment Module">
-          <img src="ebarangay-appointment.png" alt="E-Barangay Appointment Module">
+        <button class="screenshot-panel" type="button" data-image="ebarangay-appointment.webp" data-title="Appointment Module">
+          <img loading="lazy" decoding="async" src="ebarangay-appointment.webp" alt="E-Barangay Appointment Module">
           <span>Appointment Module</span>
         </button>
 
-        <button class="screenshot-panel" type="button" data-image="ebarangay-queue.png" data-title="Queue Check-In Module">
-          <img src="ebarangay-queue.png" alt="E-Barangay Queue Check-In Module">
+        <button class="screenshot-panel" type="button" data-image="ebarangay-queue.webp" data-title="Queue Check-In Module">
+          <img loading="lazy" decoding="async" src="ebarangay-queue.webp" alt="E-Barangay Queue Check-In Module">
           <span>Queue Check-In Module</span>
         </button>
 
-        <button class="screenshot-panel" type="button" data-image="ebarangay-admin.png" data-title="Queue Administration Module">
-          <img src="ebarangay-admin.png" alt="E-Barangay Queue Administration Module">
+        <button class="screenshot-panel" type="button" data-image="ebarangay-admin.webp" data-title="Queue Administration Module">
+          <img loading="lazy" decoding="async" src="ebarangay-admin.webp" alt="E-Barangay Queue Administration Module">
           <span>Queue Administration Module</span>
         </button>
 
-        <button class="screenshot-panel" type="button" data-image="ebarangay-display.png" data-title="Now Serving Display">
-          <img src="ebarangay-display.png" alt="E-Barangay Now Serving Display">
+        <button class="screenshot-panel" type="button" data-image="ebarangay-display.webp" data-title="Now Serving Display">
+          <img loading="lazy" decoding="async" src="ebarangay-display.webp" alt="E-Barangay Now Serving Display">
           <span>Now Serving Display</span>
         </button>
       </div>
@@ -362,44 +362,5 @@
 
   <script src="script.js"></script>
 
-  <script>
-    const galleryModal = document.getElementById("galleryModal");
-    const galleryImage = document.getElementById("galleryImage");
-    const galleryTitle = document.getElementById("galleryTitle");
-    const galleryButtons = document.querySelectorAll(".screenshot-panel");
-    const closeGalleryButtons = document.querySelectorAll("[data-close-gallery]");
-
-    galleryButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const image = button.getAttribute("data-image");
-        const title = button.getAttribute("data-title");
-
-        galleryImage.src = image;
-        galleryImage.alt = title;
-        galleryTitle.textContent = title;
-        galleryModal.classList.add("is-open");
-        galleryModal.setAttribute("aria-hidden", "false");
-        document.body.classList.add("modal-open");
-      });
-    });
-
-    closeGalleryButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        galleryModal.classList.remove("is-open");
-        galleryModal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("modal-open");
-        galleryImage.src = "";
-      });
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        galleryModal.classList.remove("is-open");
-        galleryModal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("modal-open");
-        galleryImage.src = "";
-      }
-    });
-  </script>
 </body>
 </html>
