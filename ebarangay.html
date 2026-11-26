@@ -362,44 +362,5 @@
 
   <script src="script.js"></script>
 
-  <script>
-    const galleryModal = document.getElementById("galleryModal");
-    const galleryImage = document.getElementById("galleryImage");
-    const galleryTitle = document.getElementById("galleryTitle");
-    const galleryButtons = document.querySelectorAll(".screenshot-panel");
-    const closeGalleryButtons = document.querySelectorAll("[data-close-gallery]");
-
-    galleryButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const image = button.getAttribute("data-image");
-        const title = button.getAttribute("data-title");
-
-        galleryImage.src = image;
-        galleryImage.alt = title;
-        galleryTitle.textContent = title;
-        galleryModal.classList.add("is-open");
-        galleryModal.setAttribute("aria-hidden", "false");
-        document.body.classList.add("modal-open");
-      });
-    });
-
-    closeGalleryButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        galleryModal.classList.remove("is-open");
-        galleryModal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("modal-open");
-        galleryImage.src = "";
-      });
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        galleryModal.classList.remove("is-open");
-        galleryModal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("modal-open");
-        galleryImage.src = "";
-      }
-    });
-  </script>
 </body>
 </html>
